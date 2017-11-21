@@ -1,0 +1,27 @@
+{
+  "name": "elnath-pg-intro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/decameters/elnath-pg-intro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/decameters/elnath-pg-intro/issues"
+  },
+  "homepage": "https://github.com/decameters/elnath-pg-intro#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "jquery": "^3.2.1",
+    "pg": "^7.4.0"
+  }
+}
