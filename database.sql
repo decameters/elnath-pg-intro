@@ -8,3 +8,6 @@ INSERT INTO shoes (name, cost)
 VALUES ('Frye Boots', 350),
 ('Yeezys', 220),
 ('Space Boots', 10);
+
+INSERT INTO shoes (name, cost)
+VALUES ('Frye Boots', 350);
