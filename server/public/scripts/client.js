@@ -32,7 +32,9 @@ function getAllShoes(){
             $('#shoes').empty(); // .html('') would also work
             for (let i = 0; i < response.length; i++) {
             var shoe = response[i];
-            var $newShoeItem = $('<li>' + shoe.name +  '</li>');
+            // var $newShoeItem = $('<li>' + shoe.name +  '</li>');
+            
+            var $newShoeItem = $('<li><input class="newShoeIn" placeholder="' + shoe.name + '">');
 
             // create and append the save button
             var $saveShoeButton = $('<button class="saveButton">SAVE</button>');
@@ -40,7 +42,7 @@ function getAllShoes(){
             $saveShoeButton.data('id', shoe.id);
     
             // create and append the delete button
-            var $deleteShoeButton = $('<button class="deleteButton">DELETE</button>');
+            var $deleteShoeButton = $('<button class="deleteButton">DELETE</button></li>');
             $deleteShoeButton.data('id', shoe.id);
             $newShoeItem.append($deleteShoeButton); // appends INSIDE of the element you are referring to
             // becomes the last element inside of the element you are referring to
@@ -74,14 +76,14 @@ function editShoe(){
     // save button next to delete button
     // log the id
     var shoeIdToSave = $(this).data().id;
+    var $inputValue = $(this).parent().children('.newShoeIn').val();
     console.log('save shoe was clicked, the shoe ID was', shoeIdToSave);
 
     $.ajax({
         method: 'PUT',
         url: '/shoes/' +shoeIdToSave,
         data: {
-            name: 'Moon Boots',
-            cost: '0'
+            name: $inputValue
         },
         success: function (response) {
             getAllShoes();
